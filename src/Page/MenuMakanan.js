@@ -32,7 +32,7 @@ class MenuMakanan extends Component {
         this.setState((state, props) => {
             return {
                 pesan: "Nasi Padang",
-                jumlah: this.state.jumlah + 1,
+                jumlah: state.jumlah + 1,
                 tampil: true
             }
         });
@@ -42,7 +42,7 @@ class MenuMakanan extends Component {
         this.setState((state, props) => {
             return {
                 pesan: "Sate",
-                jumlah: this.state.jumlah + 1,
+                jumlah: state.jumlah + 1,
                 tampil: true
             }
         });
@@ -52,7 +52,7 @@ class MenuMakanan extends Component {
         this.setState((state, props) => {
             return {
                 pesan: "Soto Ayam Lamongan",
-                jumlah: this.state.jumlah + 1,
+                jumlah: state.jumlah + 1,
                 tampil: true
             }
         });
@@ -62,7 +62,7 @@ class MenuMakanan extends Component {
         this.setState((state, Props) => {
             return {
                 pesan: "Nasi Uduk",
-                jumlah: this.state.jumlah + 1,
+                jumlah: state.jumlah + 1,
                 tampil: true
             }
         });
@@ -72,7 +72,7 @@ class MenuMakanan extends Component {
         this.setState((state, props) => {
             return {
                 pesan: "Nasi Kuning",
-                jumlah: this.state.jumlah + 1,
+                jumlah: state.jumlah + 1,
                 tampil: true
             }
         });
@@ -117,7 +117,7 @@ class MenuMakanan extends Component {
                     </tbody>
                 </table>
                 <br />
-                <input type="text" value={this.state.pesan} placeholder="Masukan Pesanan Anda" onChange={(e) => this.pilihPesanan('pesan', e)} />&nbsp;
+                <input type="text" placeholder="Masukan Pesanan Anda" onChange={(e) => this.pilihPesanan('pesan', e)} />&nbsp;
                 <input type="number" placeholder="Jumlah Pesanan" onChange={(e) => this.pilihPesanan('jumlah', e)} />&nbsp;
                 <button onClick={this.batal}>Batalkan Semua Pesanan</button>
 

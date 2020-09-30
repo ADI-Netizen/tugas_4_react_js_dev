@@ -19,46 +19,62 @@ class MenuMakanan extends Component {
     }
 
     pilihPesanan(value, e) {
-        this.setState({ [value]: e.target.value, tampil: true });
+        var tampungData = e.target.value;
+        this.setState((state, props) => {
+            return {
+                [value]: tampungData,
+                tampil: true
+            }
+        });
     }
 
     nasipadang() {
-        this.setState({
-            pesan: "Nasi Padang",
-            jumlah: this.state.jumlah + 1,
-            tampil: true
+        this.setState((state, props) => {
+            return {
+                pesan: "Nasi Padang",
+                jumlah: this.state.jumlah + 1,
+                tampil: true
+            }
         });
     }
 
     sate() {
-        this.setState({
-            pesan: "Sate",
-            jumlah: this.state.jumlah + 1,
-            tampil: true
+        this.setState((state, props) => {
+            return {
+                pesan: "Sate",
+                jumlah: this.state.jumlah + 1,
+                tampil: true
+            }
         });
     }
 
     soto() {
-        this.setState({
-            pesan: "Soto Ayam Lamongan",
-            jumlah: this.state.jumlah + 1,
-            tampil: true
+        this.setState((state, props) => {
+            return {
+                pesan: "Soto Ayam Lamongan",
+                jumlah: this.state.jumlah + 1,
+                tampil: true
+            }
         });
     }
 
     uduk() {
-        this.setState({
-            pesan: "Nasi Uduk",
-            jumlah: this.state.jumlah + 1,
-            tampil: true
+        this.setState((state, Props) => {
+            return {
+                pesan: "Nasi Uduk",
+                jumlah: this.state.jumlah + 1,
+                tampil: true
+            }
         });
     }
 
     kuning() {
-        this.setState({
-            pesan: "Nasi Kuning",
-            jumlah: this.state.jumlah + 1,
-            tampil: true
+        this.setState((state, props) => {
+            return {
+                pesan: "Nasi Kuning",
+                jumlah: this.state.jumlah + 1,
+                tampil: true
+            }
         });
     }
 
@@ -101,8 +117,8 @@ class MenuMakanan extends Component {
                     </tbody>
                 </table>
                 <br />
-                <input type="text" placeholder="Masukan Pesanan Anda" onChange={e => this.pilihPesanan("pesan", e)} />&nbsp;
-                <input type="number" placeholder="Jumlah Pesanan" onChange={e => this.pilihPesanan("jumlah", e)} />&nbsp;
+                <input type="text" value={this.state.pesan} placeholder="Masukan Pesanan Anda" onChange={(e) => this.pilihPesanan('pesan', e)} />&nbsp;
+                <input type="number" placeholder="Jumlah Pesanan" onChange={(e) => this.pilihPesanan('jumlah', e)} />&nbsp;
                 <button onClick={this.batal}>Batalkan Semua Pesanan</button>
 
                 {this.state.tampil === true ? (
